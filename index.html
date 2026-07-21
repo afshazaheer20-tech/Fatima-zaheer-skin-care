@@ -10,7 +10,7 @@
 <style>
 .buy-btn{
     background:#0d6efd;
-    color:white;
+    color:yellowgreen;
     border:none;
     padding:12px 25px;
     border-radius:30px;
@@ -23,8 +23,8 @@
 .menu-btn{
     font-size:30px;
     cursor:pointer;
-    position:absolute;
-    right:20px;
+    position:absolute; 
+    right:20px; 
     top:20px;
 }
 
@@ -34,7 +34,7 @@
     position:fixed;
     top:0;
     right:0;
-    background:white;
+    background:lightpink;
     overflow:hidden;
     transition:0.4s;
     padding-top:60px;
@@ -93,7 +93,7 @@ margin-top:15px;
 }
 
 nav a{
-color:white;
+color:blue;
 text-decoration:none;
 margin:15px;
 font-size:18px;
@@ -111,7 +111,8 @@ linear-gradient(
 rgba(0,102,204,.65),
 rgba(255,140,0,.45)
 ),
-url("https://images.unsplash.com/photo-1556228720-195a672e8a03");
+
+  url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80"); 
 
 background-size:cover;
 background-position:center;
@@ -271,7 +272,7 @@ border-radius:15px;
 
 .card h3{
 
-color:#0066cc;
+color:blueviolet;
 
 margin:15px;
 
@@ -353,7 +354,7 @@ font-size:30px;
 
 <div class="logo">
 
-🌸 Bloom<span>Skin</span>
+ Glowvia<span>Skincare</span>
 
 </div>
 
@@ -379,16 +380,17 @@ font-size:30px;
 
 <div>
 
-<h1>Glow Naturally With BloomSkin</h1>
+<h1>Glow Naturally With Glowvia Skincare</h1>
 
 <p>Premium skincare products for beautiful and healthy skin</p>
 
-<button>Buy Now</button>
+<button class="btn" onclick="shopNow()">Shop Now</button>
+
+</section>
 
 </div>
 
 </section>
-
 
 
 <div class="search">
@@ -419,13 +421,9 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
-
-
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 </div>
-
-
 
 <div class="card">
 
@@ -439,12 +437,10 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
-
-
 
 <div class="card">
 
@@ -458,7 +454,7 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -477,7 +473,7 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -496,7 +492,7 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 </div>
 
@@ -514,7 +510,7 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -533,7 +529,7 @@ font-size:30px;
 
 <button class="btn">🛒 Add Cart</button>
 
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 
@@ -552,7 +548,8 @@ font-size:30px;
 <div class="price">Rs.899</div>
 
 <button class="btn">🛒 Add Cart</button>
-<button class="buy-btn">Buy Now</button>
+
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -570,7 +567,7 @@ font-size:30px;
 <div class="price">Rs.599</div>
 
 <button class="btn">🛒 Add Cart</button>
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -588,7 +585,7 @@ font-size:30px;
 <div class="price">Rs.799</div>
 
 <button class="btn">🛒 Add Cart</button>
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -606,7 +603,7 @@ font-size:30px;
 <div class="price">Rs.649</div>
 
 <button class="btn">🛒 Add Cart</button>
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -624,7 +621,7 @@ font-size:30px;
 <div class="price">Rs.399</div>
 
 <button class="btn">🛒 Add Cart</button>
-<button class="buy-btn">Buy Now</button>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
 
 
 </div>
@@ -665,15 +662,15 @@ Shop Offer
 
 <section id="about" style="padding:60px;">
 
-<h2 style="text-align:center;color:#0066cc;font-size:35px;">
-🌸 About BloomSkin
+<h2 style="text-align:center;color:Mint Green;font-size:35px;">
+ About Glowvia Skincare
 </h2>
 
 <br>
 
 <p style="font-size:18px;line-height:2;text-align:center;">
 
-BloomSkin is a professional skincare brand created to provide
+Glowvia Skincare is a professional skincare brand created to provide
 high quality beauty products for everyone.
 
 We believe that healthy skin comes from proper care,
@@ -758,6 +755,37 @@ for our customers.
 
 <h2 style="text-align:center;color:#0066cc;font-size:35px;">
 📞 Contact BloomSkin
+
+<!-- Reviews -->
+</section>
+
+<!-- Payment Section -->
+
+<section id="payment" style="padding:50px;text-align:center;background:#f8fbff;">
+
+<h2 style="color:#0066cc;">💳 Payment Methods</h2>
+
+<br>
+
+<h3>🏦 Bank Transfer</h3>
+
+<p><b>Bank Name:</b> HBL Bank</p>
+<p><b>Account Title:</b> Glowvia Skincare</p>
+<p><b>Account Number:</b> 03182311720</p>
+
+<br>
+
+<h3>🚚 Cash on Delivery (COD)</h3>
+
+<p>
+Customers can also pay in cash when their order is delivered.
+No advance payment is required for Cash on Delivery orders.
+</p>
+
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
 </h2>
 
 <br>
@@ -798,9 +826,9 @@ Send Message
 
 📍 Address: Karachi, Pakistan <br><br>
 
-📞 Phone: 0300-1234567 <br><br>
+📞 Phone: 03182311720 <br><br>
 
-✉ Email: bloomskin@gmail.com
+✉ Email: afshszaheer20@gmail.com
 
 
 </div>
@@ -818,7 +846,7 @@ Send Message
 
 
 <h2>
-🌸 BloomSkin
+Glowvia Skincare
 </h2>
 
 
@@ -942,12 +970,15 @@ function shopNow(){
 function shopNow(){
     document.getElementById("products").scrollIntoView();
 } 
-
-function buyNow(){
-    alert("Thank you for shopping with BloomSkin!");
+function shopNow(){
+    document.getElementById("products").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
-
+function buyNow(){
+    alert("Thank you for shopping with BloomSkin ❤️");
+}
 
 </script>
 
