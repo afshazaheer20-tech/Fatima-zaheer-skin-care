@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BloomSkin | Beauty Products</title>
+
+<style>
+
+.menu-btn{
+    font-size:30px;
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+
+.side-menu{
+    height:100%;
+    width:0;
+    position:fixed;
+    top:0;
+    right:0;
+    background:white;
+    overflow:hidden;
+    transition:0.4s;
+    padding-top:60px;
+}
+
+.side-menu a{
+    display:block;
+    padding:20px;
+    text-decoration:none;
+    color:#333;
+}
+
+.side-menu.show{
+    width:250px;
+}
+
+nav a{
+    display:block;
+    margin:15px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+background:#f8fbff;
+color:#333;
+}
+
+
+/* Header */
+
+header{
+background:linear-gradient(90deg,#0066cc,#ff8c00);
+padding:20px;
+color:white;
+text-align:center;
+}
+
+.logo{
+font-size:38px;
+font-weight:bold;
+}
+
+.logo span{
+color:#fff2a8;
+}
+
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:18px;
+}
+
+
+/* Hero */
+
+.hero{
+
+height:450px;
+
+background:
+linear-gradient(
+rgba(0,102,204,.65),
+rgba(255,140,0,.45)
+),
+url("https://images.unsplash.com/photo-1556228720-195a672e8a03");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+color:white;
+
+}
+
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+
+.hero p{
+
+font-size:22px;
+margin:20px;
+
+}
+
+
+
+.btn{
+
+background:#ff8c00;
+color:white;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+.btn:hover{
+
+background:#0066cc;
+
+}
+
+
+
+/* Search */
+
+.search{
+
+text-align:center;
+padding:30px;
+
+}
+
+
+.search input{
+
+width:70%;
+
+padding:15px;
+
+border-radius:30px;
+
+border:2px solid #0066cc;
+
+font-size:17px;
+
+}
+
+
+
+/* Products */
+
+
+.products{
+
+padding:40px;
+
+}
+
+
+.products h2{
+
+text-align:center;
+
+color:#0066cc;
+
+font-size:35px;
+
+margin-bottom:30px;
+
+}
+
+
+
+.container{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 5px 20px #ddd;
+
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.card img{
+
+width:160px;
+
+height:160px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+}
+
+
+
+.card h3{
+
+color:#0066cc;
+
+margin:15px;
+
+}
+
+
+
+.price{
+
+color:#ff8c00;
+
+font-size:22px;
+
+font-weight:bold;
+
+}
+
+
+
+@media(max-width:900px){
+
+.container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:30px;
+
+}
+.menu-btn{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+@media(max-width:600px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        display:none;
+    }
+
+    nav.show{
+        display:block;
+    }
+
+    nav a{
+        display:block;
+        margin:15px;
+    }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+🌸 Bloom<span>Skin</span>
+
+</div>
+
+	<div class="menu-btn" onclick="showMenu()">
+☰
+</div>
+
+<div class="side-menu" id="sideMenu">
+
+ <a href="#home" onclick="showMenu()">Home</a>
+ <a href="#products" onclick="showMenu()">Products</a>
+ <a href="#about" onclick="showMenu()">About</a>
+   <a href="#contact" onclick="showMenu()">Contact</a>
+</div>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>Glow Naturally With BloomSkin</h1>
+
+<p>Premium skincare products for beautiful and healthy skin</p>
+
+
+
+
+<button onclick="shopNow()">Shop Now</button>
+
+
+</div>
+
+</section>
+
+
+
+<div class="search">
+
+<input type="text" placeholder="🔍 Search your product">
+
+</div>
+
+
+
+<section class="products" id="products">
+
+<h2>Our Beauty Collection</h2>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
+
+<h3>Face Wash</h3>
+
+<p>Deep cleansing formula</p>
+
+<div class="price">Rs.799</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b">
+
+<h3>Vitamin C Serum</h3>
+
+<p>Brightening skin care</p>
+
+<div class="price">Rs.1299</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd">
+
+<h3>Moisturizer</h3>
+
+<p>Soft hydrated skin</p>
+
+<div class="price">Rs.999</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571">
+
+<h3>Sunscreen</h3>
+
+<p>UV protection cream</p>
+
+<div class="price">Rs.899</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+<!-- More Products -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b">
+
+<h3>Beauty Shampoo</h3>
+
+<p>Healthy and shiny hair care</p>
+
+<div class="price">Rs.1099</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
+
+<h3>Natural Hair Oil</h3>
+
+<p>Nourishing hair treatment</p>
+
+<div class="price">Rs.699</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b">
+
+<h3>Night Cream</h3>
+
+<p>Skin repair and glow</p>
+
+<div class="price">Rs.1199</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
+
+<h3>Skin Repair Cream</h3>
+
+<p>Moisturizing beauty cream</p>
+
+<div class="price">Rs.899</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
+
+<h3>Face Toner</h3>
+
+<p>Fresh glowing skin</p>
+
+<div class="price">Rs.599</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be">
+
+<h3>Face Mask</h3>
+
+<p>Refreshing beauty mask</p>
+
+<div class="price">Rs.799</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
+
+<h3>Skin Scrub</h3>
+
+<p>Remove dead skin cells</p>
+
+<div class="price">Rs.649</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae">
+
+<h3>Lip Balm</h3>
+
+<p>Soft moisturized lips</p>
+
+<div class="price">Rs.399</div>
+
+<button class="btn">🛒 Add Cart</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- Special Offers -->
+
+<section style="padding:50px;text-align:center;background:#fff3e6;">
+
+<h2 style="color:#0066cc;">
+🎁 Special Offers
+</h2>
+
+<br>
+
+<p style="font-size:20px;">
+Get 30% discount on your first BloomSkin order!
+</p>
+
+<br>
+
+<button class="btn">
+Shop Offer
+</button>
+
+</section>
+
+
+
+
+<!-- About Us -->
+
+<section id="about" style="padding:60px;">
+
+<h2 style="text-align:center;color:#0066cc;font-size:35px;">
+🌸 About BloomSkin
+</h2>
+
+<br>
+
+<p style="font-size:18px;line-height:2;text-align:center;">
+
+BloomSkin is a professional skincare brand created to provide
+high quality beauty products for everyone.
+
+We believe that healthy skin comes from proper care,
+good quality ingredients and daily skincare routine.
+
+Our products are designed to provide hydration,
+protection and a natural glow.
+
+BloomSkin focuses on beauty, confidence and self-care.
+We always try to bring safe and effective skincare solutions
+for our customers.
+
+</p>
+
+</section>
+
+
+
+
+<!-- Reviews -->
+
+<section style="padding:50px;background:#eef7ff;">
+
+<h2 style="text-align:center;color:#0066cc;">
+⭐ Customer Reviews
+</h2>
+
+<br>
+
+
+<div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;">
+
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Very beautiful products. My skin feels fresh."
+</p>
+
+<b>- Ayesha</b>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"BloomSkin website design is amazing."
+</p>
+
+<b>- Sana</b>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐</h3>
+
+<p>
+"Good quality skincare collection."
+</p>
+
+<b>- Maria</b>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact" style="padding:60px;">
+
+<h2 style="text-align:center;color:#0066cc;font-size:35px;">
+📞 Contact BloomSkin
+</h2>
+
+<br>
+
+
+<form style="max-width:600px;margin:auto;">
+
+
+<input type="text" placeholder="Enter Your Name"
+style="width:100%;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;">
+
+
+
+<input type="email" placeholder="Enter Your Email"
+style="width:100%;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;">
+
+
+
+<textarea placeholder="Write Your Message"
+style="width:100%;height:130px;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;"></textarea>
+
+
+
+<button type="button" class="btn" onclick="sendMessage()">
+
+Send Message
+
+</button>
+
+
+</form>
+
+
+<br><br>
+
+
+<div style="text-align:center;font-size:18px;">
+
+📍 Address: Karachi, Pakistan <br><br>
+
+📞 Phone: 0300-1234567 <br><br>
+
+✉ Email: bloomskin@gmail.com
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- Footer -->
+
+<footer style="background:#0066cc;color:white;text-align:center;padding:30px;">
+
+
+<h2>
+🌸 BloomSkin
+</h2>
+
+
+<p>
+Beauty • Care • Confidence
+</p>
+
+
+<p>
+© 2026 BloomSkin | All Rights Reserved
+</p>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+// Search Function
+
+
+let searchBox = document.querySelector(".search input");
+
+let products = document.querySelectorAll(".card");
+
+
+
+searchBox.addEventListener("keyup",function(){
+
+
+let value = searchBox.value.toLowerCase();
+
+
+
+products.forEach(function(product){
+
+
+let text = product.innerText.toLowerCase();
+
+
+
+if(text.includes(value)){
+
+
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+// Cart Button
+
+
+let cartButtons = document.querySelectorAll(".btn");
+
+
+
+cartButtons.forEach(function(btn){
+
+
+btn.addEventListener("click",function(){
+
+
+if(btn.innerHTML.includes("Cart")){
+
+
+alert("🛒 Product added to your cart!");
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+// Contact Message
+
+
+function sendMessage(){
+
+
+alert("Thank you! Your message has been sent successfully ❤️");
+}
+
+
+    function showMenu(){
+    document.getElementById("sideMenu").classList.toggle("show");
+}
+
+function shopNow(){
+    alert("Thank you for shopping with BloomSkin ❤️");
+}
+function shopNow(){
+    document.getElementById("products").scrollIntoView();
+} 
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
