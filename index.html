@@ -1,989 +1,898 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BloomSkin | Beauty Products</title>
-
-<style>
-.buy-btn{
-    background:#0d6efd;
-    color:yellowgreen;
-    border:none;
-    padding:12px 25px;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
-    margin-top:10px;
-    width:180px;
-}
-
-.menu-btn{
-    font-size:30px;
-    cursor:pointer;
-    position:absolute; 
-    right:20px; 
-    top:20px;
-}
-
-.side-menu{
-    height:100%;
-    width:0;
-    position:fixed;
-    top:0;
-    right:0;
-    background:lightpink;
-    overflow:hidden;
-    transition:0.4s;
-    padding-top:60px;
-}
-
-.side-menu a{
-    display:block;
-    padding:20px;
-    text-decoration:none;
-    color:#333;
-}
-
-.side-menu.show{
-    width:250px;
-}
-
-nav a{
-    display:block;
-    margin:15px;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
-}
-
-body{
-background:#f8fbff;
-color:#333;
-}
-
-
-/* Header */
-
-header{
-background:linear-gradient(90deg,#0066cc,#ff8c00);
-padding:20px;
-color:white;
-text-align:center;
-}
-
-.logo{
-font-size:38px;
-font-weight:bold;
-}
-
-.logo span{
-color:#fff2a8;
-}
-
-
-nav{
-margin-top:15px;
-}
-
-nav a{
-color:blue;
-text-decoration:none;
-margin:15px;
-font-size:18px;
-}
-
-
-/* Hero */
-
-.hero{
-
-height:450px;
-
-background:
-linear-gradient(
-rgba(0,102,204,.65),
-rgba(255,140,0,.45)
-),
-
-  url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80"); 
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-color:white;
-
-}
-
-
-.hero h1{
-
-font-size:50px;
-
-}
-
-
-.hero p{
-
-font-size:22px;
-margin:20px;
-
-}
-
-
-
-.btn{
-
-background:#ff8c00;
-color:white;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:30px;
-
-cursor:pointer;
-
-font-size:16px;
-
-}
-
-
-.btn:hover{
-
-background:#0066cc;
-
-}
-
-
-
-/* Search */
-
-.search{
-
-text-align:center;
-padding:30px;
-
-}
-
-
-.search input{
-
-width:70%;
-
-padding:15px;
-
-border-radius:30px;
-
-border:2px solid #0066cc;
-
-font-size:17px;
-
-}
-
-
-
-/* Products */
-
-
-.products{
-
-padding:40px;
-
-}
-
-
-.products h2{
-
-text-align:center;
-
-color:#0066cc;
-
-font-size:35px;
-
-margin-bottom:30px;
-
-}
-
-
-
-.container{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-}
-
-
-
-.card{
-
-background:white;
-
-padding:20px;
-
-border-radius:20px;
-
-text-align:center;
-
-box-shadow:0 5px 20px #ddd;
-
-transition:.3s;
-
-}
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-
-
-.card img{
-
-width:160px;
-
-height:160px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-}
-
-
-
-.card h3{
-
-color:blueviolet;
-
-margin:15px;
-
-}
-
-
-
-.price{
-
-color:#ff8c00;
-
-font-size:22px;
-
-font-weight:bold;
-
-}
-
-
-
-@media(max-width:900px){
-
-.container{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-
-@media(max-width:600px){
-
-.container{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:30px;
-
-}
-.menu-btn{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
-}
-
-
-@media(max-width:600px){
-
-    .menu-btn{
-        display:block;
-    }
-
-    nav{
-        display:none;
-    }
-
-    nav.show{
-        display:block;
-    }
-
-    nav a{
-        display:block;
-        margin:15px;
-    }
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverPure Organics | Beauty Products</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #faf8f5; /* Warm Soft Natural Cream */
+            color: #2c3e2e;
+            overflow-x: hidden;
+        }
+
+        /* Overlay when sidebar open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 99;
+            display: none;
+            transition: 0.3s;
+        }
+        .overlay.active {
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #1b3b1e, #3a683d);
+            padding: 15px 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 98;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        /* ChatGPT-style Sidebar Toggle Button (Top Left Corner) */
+        .sidebar-toggle-btn {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            background: rgba(255,255,255,0.12);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .sidebar-toggle-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: #d1e7dd;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        nav a:hover {
+            color: #d1e7dd;
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background: rgba(255,255,255,0.12);
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-icon-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #e63946;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ChatGPT-Style Left Drawer / Sidebar */
+        .sidebar {
+            height: 100vh;
+            width: 280px;
+            position: fixed;
+            top: 0;
+            left: -280px; /* Hidden off-screen left */
+            background: #142a16;
+            color: white;
+            transition: 0.3s ease-in-out;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+        }
+
+        .sidebar.open {
+            left: 0; /* Slide in */
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-header h3 {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d1e7dd;
+        }
+
+        .close-sidebar-btn {
+            font-size: 20px;
+            cursor: pointer;
+            color: #aaa;
+            transition: 0.2s;
+        }
+        .close-sidebar-btn:hover {
+            color: white;
+        }
+
+        .sidebar-menu {
+            padding: 15px 10px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .sidebar-section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #88a38b;
+            letter-spacing: 1px;
+            margin: 15px 10px 8px;
+            font-weight: 600;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: #e0e0e0;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 4px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .sidebar-item i {
+            width: 20px;
+            text-align: center;
+            color: #a3c9a8;
+        }
+
+        .sidebar-footer {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 480px;
+            background: linear-gradient(rgba(15, 30, 16, 0.6), rgba(15, 30, 16, 0.6)), 
+                        url('https://images.unsplash.com/photo-1608248597263-000799965d8f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin: 10px 0 25px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .btn {
+            background: #2e5a32;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #1e3d21;
+        }
+
+        .buy-btn {
+            background: #38761d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .buy-btn:hover {
+            background: #275214;
+        }
+
+        /* Search */
+        .search {
+            text-align: center;
+            padding: 35px 15px 10px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2e5a32;
+            font-size: 18px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 30px;
+            border: 2px solid #2e5a32;
+            font-size: 16px;
+            outline: none;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        /* Products */
+        .products {
+            padding: 40px 8%;
+        }
+
+        .products h2 {
+            text-align: center;
+            color: #1b3b1e;
+            font-size: 34px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 18px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: .3s;
+            border: 1px solid #eae5dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .card h3 {
+            color: #1b3b1e;
+            margin: 14px 0 6px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .price {
+            color: #d97706;
+            font-size: 21px;
+            font-weight: bold;
+            margin: 12px 0 8px;
+        }
+
+        .card-actions {
+            margin-top: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #eef4eb;
+            padding: 40px 8%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .feature-box {
+            padding: 20px;
+        }
+
+        .feature-box i {
+            font-size: 36px;
+            color: #2e5a32;
+            margin-bottom: 12px;
+        }
+
+        .feature-box h4 {
+            color: #1b3b1e;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .feature-box p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* Contact Details Grid */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 30px auto 0;
+            text-align: center;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #eae5dc;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .contact-info-card i {
+            font-size: 28px;
+            color: #2e5a32;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media(max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            nav {
+                display: none; /* Mobile menu moves inside sidebar drawer */
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<header>
-
-<div class="logo">
-
- Glowvia<span>Skincare</span>
-
-</div>
-
-	<div class="menu-btn" onclick="showMenu()">
-☰
-</div>
-
-<div class="side-menu" id="sideMenu">
-
- <a href="#home" onclick="showMenu()">Home</a>
- <a href="#products" onclick="showMenu()">Products</a>
- <a href="#about" onclick="showMenu()">About</a>
-   <a href="#contact" onclick="showMenu()">Contact</a>
-</div>
-
-</nav>
-
-</header>
-
-
-
-<section class="hero" id="home">
-
-<div>
-
-<h1>Glow Naturally With Glowvia Skincare</h1>
-
-<p>Premium skincare products for beautiful and healthy skin</p>
-
-<button class="btn" onclick="shopNow()">Shop Now</button>
-
-</section>
-
-</div>
-
-</section>
-
-
-<div class="search">
-
-<input type="text" placeholder="🔍 Search your product">
-
-</div>
-
-
-
-<section class="products" id="products">
-
-<h2>Our Beauty Collection</h2>
-
-
-<div class="container">
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
-
-<h3>Face Wash</h3>
-
-<p>Deep cleansing formula</p>
-
-<div class="price">Rs.799</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b">
-
-<h3>Vitamin C Serum</h3>
-
-<p>Brightening skin care</p>
-
-<div class="price">Rs.1299</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd">
-
-<h3>Moisturizer</h3>
-
-<p>Soft hydrated skin</p>
-
-<div class="price">Rs.999</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571">
-
-<h3>Sunscreen</h3>
-
-<p>UV protection cream</p>
-
-<div class="price">Rs.899</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-<!-- More Products -->
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b">
-
-<h3>Beauty Shampoo</h3>
-
-<p>Healthy and shiny hair care</p>
-
-<div class="price">Rs.1099</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
-
-<h3>Natural Hair Oil</h3>
-
-<p>Nourishing hair treatment</p>
-
-<div class="price">Rs.699</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b">
-
-<h3>Night Cream</h3>
-
-<p>Skin repair and glow</p>
-
-<div class="price">Rs.1199</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
-
-<h3>Skin Repair Cream</h3>
-
-<p>Moisturizing beauty cream</p>
-
-<div class="price">Rs.899</div>
-
-<button class="btn">🛒 Add Cart</button>
-
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
-
-<h3>Face Toner</h3>
-
-<p>Fresh glowing skin</p>
-
-<div class="price">Rs.599</div>
-
-<button class="btn">🛒 Add Cart</button>
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be">
-
-<h3>Face Mask</h3>
-
-<p>Refreshing beauty mask</p>
-
-<div class="price">Rs.799</div>
-
-<button class="btn">🛒 Add Cart</button>
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
-
-<h3>Skin Scrub</h3>
-
-<p>Remove dead skin cells</p>
-
-<div class="price">Rs.649</div>
-
-<button class="btn">🛒 Add Cart</button>
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae">
-
-<h3>Lip Balm</h3>
-
-<p>Soft moisturized lips</p>
-
-<div class="price">Rs.399</div>
-
-<button class="btn">🛒 Add Cart</button>
-<button class="buy-btn" onclick="buyNow()">Buy Now</button>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- Special Offers -->
-
-<section style="padding:50px;text-align:center;background:#fff3e6;">
-
-<h2 style="color:#0066cc;">
-🎁 Special Offers
-</h2>
-
-<br>
-
-<p style="font-size:20px;">
-Get 30% discount on your first BloomSkin order!
-</p>
-
-<br>
-
-<button class="btn">
-Shop Offer
-</button>
-
-</section>
-
-
-
-
-<!-- About Us -->
-
-<section id="about" style="padding:60px;">
-
-<h2 style="text-align:center;color:Mint Green;font-size:35px;">
- About Glowvia Skincare
-</h2>
-
-<br>
-
-<p style="font-size:18px;line-height:2;text-align:center;">
-
-Glowvia Skincare is a professional skincare brand created to provide
-high quality beauty products for everyone.
-
-We believe that healthy skin comes from proper care,
-good quality ingredients and daily skincare routine.
-
-Our products are designed to provide hydration,
-protection and a natural glow.
-
-BloomSkin focuses on beauty, confidence and self-care.
-We always try to bring safe and effective skincare solutions
-for our customers.
-
-</p>
-
-</section>
-
-
-
-
-<!-- Reviews -->
-
-<section style="padding:50px;background:#eef7ff;">
-
-<h2 style="text-align:center;color:#0066cc;">
-⭐ Customer Reviews
-</h2>
-
-<br>
-
-
-<div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;">
-
-
-<div class="card">
-
-<h3>⭐⭐⭐⭐⭐</h3>
-
-<p>
-"Very beautiful products. My skin feels fresh."
-</p>
-
-<b>- Ayesha</b>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>⭐⭐⭐⭐⭐</h3>
-
-<p>
-"BloomSkin website design is amazing."
-</p>
-
-<b>- Sana</b>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>⭐⭐⭐⭐</h3>
-
-<p>
-"Good quality skincare collection."
-</p>
-
-<b>- Maria</b>
-
-</div>
-
-
-</div>
-
-</section>
-
-<!-- Contact Section -->
-
-<section id="contact" style="padding:60px;">
-
-<h2 style="text-align:center;color:#0066cc;font-size:35px;">
-📞 Contact BloomSkin
-
-<!-- Reviews -->
-</section>
-
-<!-- Payment Section -->
-
-<section id="payment" style="padding:50px;text-align:center;background:#f8fbff;">
-
-<h2 style="color:#0066cc;">💳 Payment Methods</h2>
-
-<br>
-
-<h3>🏦 Bank Transfer</h3>
-
-<p><b>Bank Name:</b> HBL Bank</p>
-<p><b>Account Title:</b> Glowvia Skincare</p>
-<p><b>Account Number:</b> 03182311720</p>
-
-<br>
-
-<h3>🚚 Cash on Delivery (COD)</h3>
-
-<p>
-Customers can also pay in cash when their order is delivered.
-No advance payment is required for Cash on Delivery orders.
-</p>
-
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-</h2>
-
-<br>
-
-
-<form style="max-width:600px;margin:auto;">
-
-
-<input type="text" placeholder="Enter Your Name"
-style="width:100%;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;">
-
-
-
-<input type="email" placeholder="Enter Your Email"
-style="width:100%;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;">
-
-
-
-<textarea placeholder="Write Your Message"
-style="width:100%;height:130px;padding:15px;margin:10px;border-radius:10px;border:2px solid #0066cc;"></textarea>
-
-
-
-<button type="button" class="btn" onclick="sendMessage()">
-
-Send Message
-
-</button>
-
-
-</form>
-
-
-<br><br>
-
-
-<div style="text-align:center;font-size:18px;">
-
-📍 Address: Karachi, Pakistan <br><br>
-
-📞 Phone: 03182311720 <br><br>
-
-✉ Email: afshszaheer20@gmail.com
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- Footer -->
-
-<footer style="background:#0066cc;color:white;text-align:center;padding:30px;">
-
-
-<h2>
-Glowvia Skincare
-</h2>
-
-
-<p>
-Beauty • Care • Confidence
-</p>
-
-
-<p>
-© 2026 BloomSkin | All Rights Reserved
-</p>
-
-
-</footer>
-
-
-
-
-
-<script>
-
-
-// Search Function
-
-
-let searchBox = document.querySelector(".search input");
-
-let products = document.querySelectorAll(".card");
-
-
-
-searchBox.addEventListener("keyup",function(){
-
-
-let value = searchBox.value.toLowerCase();
-
-
-
-products.forEach(function(product){
-
-
-let text = product.innerText.toLowerCase();
-
-
-
-if(text.includes(value)){
-
-
-product.style.display="block";
-
-
-}
-
-else{
-
-
-product.style.display="none";
-
-
-}
-
-
-});
-
-
-});
-
-
-
-
-
-
-// Cart Button
-
-
-let cartButtons = document.querySelectorAll(".btn");
-
-
-
-cartButtons.forEach(function(btn){
-
-
-btn.addEventListener("click",function(){
-
-
-if(btn.innerHTML.includes("Cart")){
-
-
-alert("🛒 Product added to your cart!");
-
-}
-
-
-});
-
-
-});
-
-
-
-
-
-
-// Contact Message
-
-
-function sendMessage(){
-
-
-alert("Thank you! Your message has been sent successfully ❤️");
-}
-
-
-    function showMenu(){
-    document.getElementById("sideMenu").classList.toggle("show");
-}
-
-function shopNow(){
-    alert("Thank you for shopping with BloomSkin ❤️");
-}
-function shopNow(){
-    document.getElementById("products").scrollIntoView();
-} 
-function shopNow(){
-    document.getElementById("products").scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-function buyNow(){
-    alert("Thank you for shopping with BloomSkin ❤️");
-}
-
-</script>
-
-
+    <!-- Dark Overlay for Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- ChatGPT-Style Left Drawer / Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fa-solid fa-seedling"></i> EverPure Menu</h3>
+            <div class="close-sidebar-btn" onclick="toggleSidebar()"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+
+        <div class="sidebar-menu">
+            <div class="sidebar-section-title">Navigation</div>
+            <a href="#home" class="sidebar-item" onclick="toggleSidebar()">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
+            <a href="#products" class="sidebar-item" onclick="toggleSidebar()">
+                <i class="fa-solid fa-store"></i> All Products
+            </a>
+            <a href="#about" class="sidebar-item" onclick="toggleSidebar()">
+                <i class="fa-solid fa-circle-info"></i> About Us
+            </a>
+            <a href="#payment" class="sidebar-item" onclick="toggleSidebar()">
+                <i class="fa-solid fa-credit-card"></i> Payment Methods
+            </a>
+            <a href="#contact" class="sidebar-item" onclick="toggleSidebar()">
+                <i class="fa-solid fa-envelope"></i> Contact Us
+            </a>
+
+            <div class="sidebar-section-title">Categories</div>
+            <a href="#products" class="sidebar-item" onclick="filterCategory('skin')">
+                <i class="fa-solid fa-pump-soap"></i> Skincare & Soaps
+            </a>
+            <a href="#products" class="sidebar-item" onclick="filterCategory('hair')">
+                <i class="fa-solid fa-bottle-droplet"></i> Hair Care & Oils
+            </a>
+            <a href="#products" class="sidebar-item" onclick="filterCategory('lips')">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Lip Care & Tints
+            </a>
+
+            <div class="sidebar-section-title">User History & Orders</div>
+            <a href="javascript:void(0)" class="sidebar-item" onclick="alert('Viewing recent browsing history...')">
+                <i class="fa-solid fa-clock-rotate-left"></i> Recent History
+            </a>
+            <a href="javascript:void(0)" class="sidebar-item" onclick="alert('Your order cart is ready.')">
+                <i class="fa-solid fa-bag-shopping"></i> My Orders
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-leaf"></i> 100% Organic Certified
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="header-left">
+            <!-- 3 Lines Toggle Button (ChatGPT Style Corner Icon) -->
+            <div class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Open Sidebar Menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="logo">
+                <i class="fa-solid fa-leaf" style="color: #a3c9a8;"></i> EverPure<span>Organics</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#products"><i class="fa-solid fa-box-open"></i> Products</a>
+            <a href="#about"><i class="fa-solid fa-users"></i> About</a>
+            <a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a>
+        </nav>
+
+        <div class="cart-icon-btn" onclick="alert('Your Cart: ' + cartCount + ' item(s)')" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="cart-badge" id="cartBadge">0</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1><i class="fa-solid fa-sparkles"></i> Glow Naturally With EverPure</h1>
+            <p>100% Handcrafted, Chemical-Free Organic Beauty & Herbal Care</p>
+            <button class="btn" onclick="shopNow()"><i class="fa-solid fa-bag-shopping"></i> Shop Collection</button>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <div class="search">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search aloe vera soap, shampoo, tint oil, serum...">
+        </div>
+    </div>
+
+    <!-- Trust Features Banner -->
+    <section class="features">
+        <div class="feature-box">
+            <i class="fa-solid fa-leaf"></i>
+            <h4>100% Pure Organic</h4>
+            <p>No harsh chemicals, sulfates, or parabens</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h4>Handcrafted Fresh</h4>
+            <p>Made with natural botanical ingredients</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Fast Express Shipping</h4>
+            <p>Delivered safely across Pakistan</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Guaranteed Quality</h4>
+            <p>Dermatologically tested natural formula</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2><i class="fa-solid fa-droplet" style="color:#2e5a32;"></i> Our Organic Collection</h2>
+
+        <div class="container">
+
+            <!-- Card 1: Organic Herbal Face Wash -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80" alt="Herbal Face Wash">
+                    <h3>Herbal Face Wash</h3>
+                    <p>Pure botanical extract formula for fresh glowing skin</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 799</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Herbal Face Wash')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Herbal Face Wash')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Natural Glow Serum -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80" alt="Plant Serum">
+                    <h3>Natural Glow Serum</h3>
+                    <p>Cold-pressed herbal oil blend for deep nourishment</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 1,299</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Natural Glow Serum')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Natural Glow Serum')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Herbal Hair Oil -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80" alt="Herbal Hair Oil">
+                    <h3>Herbal Hair Growth Oil</h3>
+                    <p>Hand-crafted organic oil infused with 14 herbs</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 850</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Herbal Hair Growth Oil')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Herbal Hair Growth Oil')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Organic Beeswax Lip Balm -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=500&q=80" alt="Handmade Lip Balm">
+                    <h3>Beeswax Lip Balm</h3>
+                    <p>100% natural moisture balm for soft pink lips</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 399</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Beeswax Lip Balm')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Beeswax Lip Balm')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PRODUCT 5: Aloe Vera & Neem Organic Soap -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?auto=format&fit=crop&w=500&q=80" alt="Aloe Vera Neem Soap">
+                    <h3>Aloe Vera & Neem Soap</h3>
+                    <p>Antibacterial cold-process soap for clear oil-free skin</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 450</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Aloe Vera Neem Soap')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Aloe Vera Neem Soap')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PRODUCT 6: Organic Botanical Shampoo -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80" alt="Organic Shampoo">
+                    <h3>Organic Botanical Shampoo</h3>
+                    <p>Sulfate-free argan & aloe shampoo for silky hair</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 950</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Organic Botanical Shampoo')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Organic Botanical Shampoo')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PRODUCT 7: Organic Rose Lip & Cheek Tint -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=500&q=80" alt="Organic Tint">
+                    <h3>Rose Lip & Cheek Tint</h3>
+                    <p>Natural beetroot-infused organic buildable blush tint</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 599</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Rose Lip & Cheek Tint')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Rose Lip & Cheek Tint')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PRODUCT 8: Organic Glow Tint Oil -->
+            <div class="card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80" alt="Tint Oil">
+                    <h3>Organic Glow Tint Oil</h3>
+                    <p>Hydrating lip & face glow oil with natural rosehip tint</p>
+                </div>
+                <div>
+                    <div class="price">Rs. 750</div>
+                    <div class="card-actions">
+                        <button class="btn" style="width:100%;" onclick="addToCart('Organic Glow Tint Oil')"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
+                        <button class="buy-btn" onclick="buyNow('Organic Glow Tint Oil')"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section style="padding:50px 20px; text-align:center; background:#e2ebd8;">
+        <h2 style="color:#1b3b1e; font-size:32px;"><i class="fa-solid fa-gift"></i> Special Organic Bundle Offer</h2>
+        <br>
+        <p style="font-size:19px;">Get flat 30% discount on your first EverPure order using code <b>EVERPURE30</b>!</p>
+        <br>
+        <button class="btn" onclick="shopNow()"><i class="fa-solid fa-tags"></i> Claim Offer</button>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" style="padding:60px 8%;">
+        <h2 style="text-align:center; color:#1b3b1e; font-size:35px; margin-bottom: 20px;">
+            <i class="fa-solid fa-seedling"></i> About EverPure Organics
+        </h2>
+        <p style="font-size:18px; line-height:1.8; text-align:center; max-width:820px; margin: auto; color:#444;">
+            EverPure Organics is a premium skincare brand crafted to provide 100% natural, chemical-free beauty solutions. We handcraft aloe vera neem soaps, pure botanical shampoos, glowing tint oils, and nourishing lip balms using pure botanical extracts.
+        </p>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment" style="padding:50px 20px; text-align:center; background:#f2eee6;">
+        <h2 style="color:#1b3b1e; margin-bottom:25px;"><i class="fa-solid fa-wallet"></i> Payment Methods</h2>
+        
+        <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:700px; margin:auto;">
+            <div style="background:white; padding:25px; border-radius:15px; flex:1; min-width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.03);">
+                <i class="fa-solid fa-building-columns" style="font-size:32px; color:#2e5a32; margin-bottom:10px;"></i>
+                <h3 style="color:#1b3b1e; margin-bottom:10px;">Bank Transfer</h3>
+                <p><b>Bank Name:</b> HBL Bank</p>
+                <p><b>Account Title:</b> EverPure Organics</p>
+                <p><b>Account Number:</b> 03182311720</p>
+            </div>
+            <div style="background:white; padding:25px; border-radius:15px; flex:1; min-width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.03);">
+                <i class="fa-solid fa-truck-ramp-box" style="font-size:32px; color:#2e5a32; margin-bottom:10px;"></i>
+                <h3 style="color:#1b3b1e; margin-bottom:10px;">Cash on Delivery</h3>
+                <p>Pay comfortably in cash when your order arrives at your doorstep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding:60px 8%;">
+        <h2 style="text-align:center; color:#1b3b1e; font-size:35px; margin-bottom: 20px;">
+            <i class="fa-solid fa-comments"></i> Contact Us
+        </h2>
+
+        <form style="max-width:600px; margin:auto;">
+            <input type="text" placeholder="Enter Your Name" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #2e5a32; background:#fff;">
+            <input type="email" placeholder="Enter Your Email" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #2e5a32; background:#fff;">
+            <textarea placeholder="Write Your Message" style="width:100%; height:130px; padding:15px; margin:10px 0; border-radius:10px; border:2px solid #2e5a32; background:#fff;"></textarea>
+            <button type="button" class="btn" style="width:100%; font-size:17px; padding:15px;" onclick="sendMessage()">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+
+        <div class="contact-info-grid">
+            <div class="contact-info-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <p><b>Location</b><br>Karachi, Pakistan</p>
+            </div>
+            <div class="contact-info-card">
+                <i class="fa-solid fa-phone"></i>
+                <p><b>Phone</b><br>03182311720</p>
+            </div>
+            <div class="contact-info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <p><b>Email</b><br>afshszaheer20@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background:#1b3b1e; color:white; text-align:center; padding:35px 20px;">
+        <h2 style="margin-bottom:8px;"><i class="fa-solid fa-leaf" style="color: #a3c9a8;"></i> EverPure Organics</h2>
+        <p style="margin: 10px 0; color:#d1e7dd;">Beauty • Natural Care • Pure Confidence</p>
+        <div style="margin: 15px 0; font-size: 20px; display: flex; justify-content: center; gap: 20px;">
+            <a href="#" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="color:white;"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p style="font-size: 14px; opacity: 0.8;">© 2026 EverPure Organics | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        // Toggle ChatGPT-style Sidebar Drawer
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("active");
+        }
+
+        // Search Function
+        let searchBox = document.querySelector(".search input");
+        let products = document.querySelectorAll(".card");
+
+        searchBox.addEventListener("keyup", function(){
+            let value = searchBox.value.toLowerCase();
+            products.forEach(function(product){
+                let text = product.innerText.toLowerCase();
+                if(text.includes(value)){
+                    product.style.display="flex";
+                } else {
+                    product.style.display="none";
+                }
+            });
+        });
+
+        // Add to Cart
+        function addToCart(productName) {
+            cartCount++;
+            document.getElementById("cartBadge").innerText = cartCount;
+            alert("🛒 " + productName + " added to your cart!");
+        }
+
+        // Buy Now
+        function buyNow(productName) {
+            alert("Proceeding to checkout for " + productName + " ❤️");
+        }
+
+        // Contact Message
+        function sendMessage(){
+            alert("Thank you! Your message has been sent successfully ❤️");
+        }
+
+        function shopNow(){
+            document.getElementById("products").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function filterCategory(cat) {
+            toggleSidebar();
+            shopNow();
+        }
+    </script>
 </body>
-
 </html>
-
